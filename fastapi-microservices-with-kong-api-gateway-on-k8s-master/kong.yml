@@ -1,0 +1,60 @@
+
+
+_format_version: "2.1"
+
+services:
+  - name: items-service
+    url: http://items:8000
+    routes:
+      - name: items-route
+        paths:
+          - /items
+
+  - name: users-service
+    url: http://users:8000
+    routes:
+      - name: users-route
+        paths:
+          - /users
+
+  - name: shops-service
+    url: http://shops:8000
+    routes:
+      - name: shops-route
+        paths:
+          - /shops
+
+
+
+
+
+# __format_version: "2.1"
+# _transform: true
+
+# services:
+#   - name: users
+#     url: http://users:8000
+#     routes:
+#       - name: users-route
+#         paths:
+#           - /users
+
+#   - name: items
+#     url: http://items:8000
+#     routes:
+#       - name: items-route
+#         paths:
+#           - /items
+
+# plugins:
+#   - name: openid-connect
+#     config:
+#       issuer: "http://keycloak:8080/realms/Hexadefence"
+#       client_id: "kong-api-client"
+#       client_secret: "W2uCL1otGs022HITSYZPpyONbMA1nItg"
+#       auth_methods:
+#         - "kong_oauth2"
+#       bearer_token_param_type: "header"
+#       scope: "openid"  # Ensure that the scope is set properly for OIDC
+#       redirect_uri: "http://localhost:8000/callback"  # Ensure this matches the Keycloak client settings
+
